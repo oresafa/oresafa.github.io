@@ -1,0 +1,262 @@
+<html>
+<head> 
+<style> 
+  /* @import url(https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900); */
+  body {
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
+	height: 100vh;
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+  #container { 
+      padding-top: 50px;
+  }
+  #content {
+      max-width: 43em;
+      padding:10px;
+      margin: 0 auto;
+  }
+  h1 {
+      font-size: 4.8em;
+      font-weight: 100;
+      text-transform: uppercase;
+      margin: 0;
+  }
+  h3 {
+      font-size: 2.4em;
+      font-weight: 300;
+      line-height: 1.5;
+  }
+  p, li {
+      font-size: 1.7em;
+  }
+  a {
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+  }
+  a:hover {
+      text-decoration: underline;
+  }
+  p#pleft {
+      max-width:20em;
+      float:left;
+  }
+  p#pright {
+      max-width:20em;
+      float:left;
+  }
+  ul {
+      clear:both;
+  }
+  
+  
+  html { font-size: 62.5%; }
+  body { font-size: 1em;}
+  
+  /* PYRAMID CODE */
+  .stage {
+    -webkit-transform:scale(1.85);
+    transform:scale(0.85);
+    float:right;
+    margin-right:120px;
+    margin-top:30px;
+    width:0px; height:0px;
+    
+    position:relative;  
+    -webkit-perspective:1200px;
+    -webkit-perspective-origin:50% 50%;
+    perspective:1200px;
+    perspective-origin:50% 50%;
+  }
+  .pyramid3d {
+    position:relative;
+    width:150px;
+    height:150px;
+    
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: rotateX(75deg) rotate(65deg);
+    transform: rotateX(75deg) rotate(65deg);
+    -webkit-animation: turnPyramid 10s linear infinite;
+    animation: turnPyramid 10s linear infinite;
+  }
+  .triangle {
+    -webkit-transform-style:preserve-3d;
+    transform-style:preserve-3d;
+    width:0; height:0;
+    background:none;
+  }
+  .triangle:before{
+    content:"";
+    position: absolute;
+    height: 0; width: 0;
+    border-style: solid;
+    border-width: 176px 75px 0 75px;
+  }
+  .side1 { -webkit-transform: translatex(0) rotatey(115.2deg) rotatez(90deg); transform: translatex(0) rotatey(115.2deg) rotatez(90deg); }
+  .side2 { -webkit-transform: translatex(150px) rotatez(90deg) rotatex(64.8deg); transform: translatex(150px) rotatez(90deg) rotatex(64.8deg); }
+  .side3 {  -webkit-transform: translatez(0) rotatex(64.8deg); transform: translatez(0) rotatex(64.8deg); }
+  .side4 { -webkit-transform: translatey(150px) rotatex(115.2deg); transform: translatey(150px) rotatex(115.2deg); }
+  .side1:before{ border-color: rgba(115, 115, 0, 0.3) transparent transparent transparent; }
+  .side2:before{ border-color: rgba(20, 90, 225, 0.3) transparent transparent transparent; }
+  .side3:before{ border-color: rgba(255,   0, 0, 0.3) transparent transparent transparent; } 
+  .side4:before{ border-color: rgba(0, 255, 255, 0.3) transparent transparent transparent; }
+  
+  
+  @-webkit-keyframes turnPyramid { 100% { -webkit-transform: rotateX(75deg) rotate(425deg); } }
+  @keyframes turnPyramid { 100% { transform: rotateX(75deg) rotate(425deg); } }
+  
+  @media (max-width: 300px) {
+      html { font-size: 70%; }
+      .stage { -webkit-transform:scale(0.05); transform:scale(0.05); }
+  }
+  @media (max-width: 440px) {
+      h1 { line-height:55px; }    
+  }
+  @media (max-width: 460px) { 
+    .stage { position:absolute; top:25px; left:50%; margin-left:-45px; } 
+    h1 { margin-top:50px; text-align:center; }
+  }
+  @media (max-width:600px) { .stage { -webkit-transform:scale(0.55); transform:scale(0.55); margin-right:60px; } }
+  @media (min-width: 600px) {
+      html { font-size: 80%; }
+      .stage { -webkit-transform:scale(0.68); transform:scale(0.68); margin-right:80px; }
+  }
+  @media (min-width: 880px) {
+      html { font-size: 120%; }
+      p, li { font-size: 1em; }
+      p#pright { margin-left:3em; }
+      .stage { -webkit-transform:scale(0.85); transform:scale(0.85); margin-right:120px; }
+  }
+  ul {
+  columns: 3;
+  -webkit-columns: 3;
+  -moz-columns: 3;
+}
+
+</style>
+</head></html>  <div id="container">
+  <div id="content">
+    <div id="about">
+      <h1>
+        <div style='float:left; margin-bottom:20px;'>
+         Hi 
+        </div>
+        <div class="stage">
+          <div class="pyramid3d">
+            <div class="triangle side1"></div>
+            <div class="triangle side2"></div>
+            <div class="triangle side3"></div>
+            <div class="triangle side4"></div>
+          </div>
+        </div> 
+      </h1>
+      <h3 style='clear:both' class="subhead">
+       <h>I'm</> <a href="https://twitter.com/ore_safa">  Safayet Hossain</a>, an enthusiast & student
+      </h3>
+<h> My curated app list </h> 
+<ul>
+    <li> <a href="https://play.google.com/store/apps/details?id=com.cloudflare.onedotonedotonedotone">1.1.1.1</a> 
+    <li> <a href="https://f-droid.org/en/packages/org.adaway/">AdAway</a> 
+    <li> <a href="https://forum.mobilism.me/search.php?keywords=Advanced+download+manager&sr=topics&sf=titleonly">ADM</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.alaap.app">Alaap</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.anonytun.android">AnonyTun</a> 
+    <li> <a href="https://f-droid.org/en/packages/io.github.muntashirakon.AppManager/">App Manager</a>  
+    <li> <a href="https://www.f-droid.org/packages/com.dimowner.audiorecorder/">Audio Recorder</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.azefsw.audioconnect">AudioRelay</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.aurora.store/">Aurora Store</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.x8bit.bitwarden">Bitwarden</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.bKash.customerapp">bKash</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.shadow.blackhole/">BlackHole</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.brave.browser">Brave</a> 
+    <li> <a href="https://f-droid.org/en/packages/org.solovyev.android.calculator/">Calculator++</a> 
+    <li> <a href="https://www.celsoazevedo.com/files/android/google-camera/dev-wichaya/">Camera</a>
+    <li> <a href="https://f-droid.org/en/packages/com.wa2c.android.cifsdocumentsprovider/">CIFS Documents Provider</a> 
+    <li> <a href="https://f-droid.org/en/packages/at.bitfire.davdroid/">DAVx⁵</a> 
+    <li> <a href="https://f-droid.org/en/packages/dev.corruptedark.diditakemymeds/">Did I Take My Meds?</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.looker.droidify/">Droid-ify</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.espn.score_center">ESPN</a> 
+    <li> <a href="https://f-droid.org/en/packages/ws.xsoh.etar/">Etar</a> 
+    <li> <a href="https://f-droid.org/en/packages/eu.faircode.email/">FairEmail</a> 
+    <li> <a href="https://f-droid.org/en/packages/cl.coders.faketraveler/">Fake Traveler</a> 
+    <li> <a href="https://forum.mobilism.me/search.php?keywords=FE+file+Explorer&sr=topics&sf=titleonly">FE File Explorer</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.enjoyingfoss.feeel/">Feeel</a> 
+    <li> <a href="https://f-droid.org/en/packages/de.marmaro.krt.ffupdater/">FFUpdater</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=org.mozilla.fenix">Firefox Nightly</a> 
+    <li> <a href="https://f-droid.org/en/packages/cz.martykan.forecastie/">Forecastie</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.softpauer.f1timingapp2014.basic">Formula 1</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.pitchedapps.frost/">Frost</a> 
+    <li> <a href="https://f-droid.org/en/packages/com.simplemobiletools.gallery.pro/">Gallery</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.photosgo">Gallery Go</a> 
+    <li> <a href="https://play.google.com/store/apps/details?id=com.github.android">GitHub</a> 
+            <li> <a href="https://f-droid.org/en/packages/it.unige.hidedroid/">HideDroid</a> 
+            <li> <a href="https://f-droid.org/en/packages/ml.docilealligator.infinityforreddit/">Infinity</a> 
+            <li> <a href="https://thedise.me/instander/repo/">Instagram</a> 
+            <li> <a href="https://f-droid.org/en/packages/org.kde.kdeconnect_tp/">KDE Connect</a> 
+            <li> <a href="https://t.me/lawnchairci">Lawnchair</a> 
+            <li> <a href="https://t.me/lawnchairci">Lawnicons</a>  
+            <li> <a href="https://f-droid.org/en/packages/com.topjohnwu.magisk/">Magisk</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.maps">Maps</a> 
+            <li> <a href="https://f-droid.org/en/packages/me.zhanghai.android.files/">Material Files</a> 
+              <li> <a href="https://f-droid.org/en/packages/io.github.muntashirakon.Music/">Metro</a>
+            <li> <a href="https://play.google.com/store/apps/details?id=mega.privacy.android.app">MEGA</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.facebook.orca">Messenger</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.microsoft.rdc.androidx">Microsoft Remote Desktop</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=net.omobio.airtelsc">My Airtel</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=net.omobio.robisc">My Robi</a> 
+            <li> <a href="https://f-droid.org/en/packages/org.polymorphicshade.newpipe/">NewPipe SponsorBlock</a> 
+            <li> <a href="https://f-droid.org/en/packages/com.nextcloud.client/">Nextcloud</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=bitpit.launcher">Niagara Launcher</a> 
+            <li> <a href="https://f-droid.org/en/packages/org.dslul.openboard.inputmethod.latin/">OpenBoard</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=net.osmand.plus">OsmAnd~</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=/com.monect.portable">PC Remote</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.iudesk.android.photo.editor">Photo Editor</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.google.android.apps.photos">Photos</a> 
+            <li> <a href="https://forum.mobilism.me/search.php?keywords=Plex&sr=topics&sf=titleonly">Plex</a> 
+            <li> <a href="https://github.com/ProtonMail/proton-mail-android/releases/">ProtonMail</a> 
+            <li> <a href="https://f-droid.org/en/packages/ch.protonvpn.android/">ProtonVPN</a> 
+            <li> <a href="https://f-droid.org/en/packages/com.moez.QKSMS/">QKSMS</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=org.readera">ReadEra</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.reddit.frontpage">Reddit</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=com.bimsina.re_walls">reWalls</a> 
+            <li> <a href="https://play.google.com/store/apps/details?id=ridmik.keyboard">Ridmik Keyboard</a> 
+            <li> <a href="https://forum.mobilism.me/search.php?keywords=SD+maid&sr=topics&sf=titleonly">SD Maid</a> 
+            <li> <a href="https://forum.mobilism.me/search.php?keywords=Sleep&sr=topics&sf=titleonly">Sleep</a>
+                <li> <a href="https://f-droid.org/en/packages/it.rignanese.leo.slimfacebook/">SlimSocial for Facebook</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=ph.spacedesk.beta">spacedesk</a> 
+                    <li> <a href="https://forum.mobilism.me/search.php?keywords=Spotify&sr=topics&sf=titleonly">Spotify</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=org.swiftapps.swiftbackup">Swift Backup</a> 
+                    <li> <a href="https://f-droid.org/en/packages/ohi.andre.consolelauncher/">T-UI</a> 
+                    <li> <a href="https://f-droid.org/en/packages/org.tasks/">Tasks</a> 
+                    <li> <a href="https://f-droid.org/en/packages/org.telegram.messenger/">Telegram FOSS</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=com.tplink.tether">Tether</a> 
+                    <li> <a href="https://f-droid.org/en/packages/org.transdroid.full/">Transdroid</a> 
+                    <li> <a href="https://f-droid.org/en/packages/com.twidere.twiderex/">Twidere X</a> 
+                    <li> <a href="https://forum.mobilism.me/search.php?keywords=Unified+remote&sr=topics&sf=titleonly">Unified Remote Full</a> 
+                    <li> <a href="https://f-droid.org/en/packages/org.videolan.vlc/">VLC</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=jbscript.vlcremote">VLC Remote</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=com.pittvandewitt.wavelet">Wavelet</a> 
+                    <li> <a href="https://play.google.com/store/apps/details?id=com.wo.voice2">WO Mic</a> 
+                    <li> <a href="https://github.com/xManager-v2/xManager-Spotify/releases">xManager</a> 
+                    </ul>
+                    
+        
+                    <button type="button" style="background-color:black;">  <a href="https://t.me/ore_safa">Telegram me</a> 
+                    </button>
+    </div>
+  </div>
+</div>
