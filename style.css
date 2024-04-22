@@ -1,33 +1,38 @@
-body {font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
-header {text-align: center;
-background-color:#333;
-color: fff;
-padding: 20px;}
-.slideshow-container {
-    position: relative;
-    max-width: 100%;
-    overflow: hidden;
-    margin-top: 20px;
-}
-.fade {
-animation-name: fade;
-animation-duration: 5s;
-animation-timing-function: ease-in-out;
-animation-iteration-count: infinite;
-}
-@keyframes fade {
-    0% {opacity: 0;}
-    50% {opacity: 1;} 
-    100% {opacity: 0;}}
+/* styles.css */
 
-.intro {text-align: center;
-margin: top 20px;
-}
-.button
-{display: inline-block;
-padding: 10px 20px;
-background-color: #333;
-color: #fff;
-text-decoration: none;
-border-radius: 5px;
-margin-top: 10px;}
+/* Basic styling for header, nav, main, footer */
+header, nav, main, footer {
+    text-align: center;
+    padding: 20px 0;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  nav ul li {
+    display: inline;
+    margin: 0 10px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .gallery-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+  }
+  
+  .gallery-container img {
+    max-width: 100%;
+  }
+  

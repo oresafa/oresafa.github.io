@@ -1,10 +1,36 @@
-const imageUrls= ['https://images.unsplash.com/photo-1695558676939-466df132a0cf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2080&q=80']
-let currentIndex= 0;
-function showImage() {
-    const img = document.getElementById('slideshow-img');
-    img.src = imageUrls[currentIndex];
-    currentIndex=(currentIndex + 1)
-    %imageUrls.length;
-    setTimeout(showImage, 3000); //
-} 
-window.onload=showImage;
+// Replace 'YOUR_ACCESS_KEY' with your actual Unsplash access key
+const accessKey = 'YOUR_ACCESS_KEY';
+
+// Replace 'COLLECTION_ID' with the ID of the Unsplash collection you want to fetch photos from
+const collectionId = 'COLLECTION_ID';
+
+// Specify the number of photos you want to fetch
+const perPage = 10;
+
+// Fetch photos from the Unsplash collection
+fetch(`https://api.unsplash.com/collections/${collectionId}/photos?per_page=${perPage}&client_id=${accessKey}`)
+  .then(response => {
+    if (!response.ok) {
+      throw new Error('Network response was not ok');
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Process the data (an array of photo objects)
+    // Display the photos on your webpage
+    displayPhotos(data);
+  })
+  .catch(error => {
+    console.error('There was a problem fetching the photos:', error);
+  });
+
+// Function to display the fetched photos on your webpage
+function displayPhotos(photos) {
+  const photoContainer = document.getElementById('photo-container');
+  photos.forEach(photo => {
+    const img = document.createElement('img');
+    img.src = photo.urls.regular; // Use the 'regular' size image
+    img.alt = photo.alt_description || 'Photo';
+    photoContainer.appendChild(img);
+  });
+}
